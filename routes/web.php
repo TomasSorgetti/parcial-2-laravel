@@ -17,3 +17,6 @@ Route::post('/auth/register', [AuthController::class, 'register'])->name('regist
 
 // verify
 Route::get('/auth/verify-email', [AuthController::class, 'showVerifyEmail'])->name('verify-email');
+
+Route::get('/welcome', [HomeController::class, 'show'])
+    ->name('welcome');

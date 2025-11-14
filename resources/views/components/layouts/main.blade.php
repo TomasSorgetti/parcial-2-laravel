@@ -12,9 +12,9 @@
 </head>
 
 <body class="bg-gray-100">
-    <main class="min-h-[70vh]">
+    <div class="min-h-[70vh]">
         {{ $slot }}
-    </main>
+    </div>
 </body>
 
 </html>

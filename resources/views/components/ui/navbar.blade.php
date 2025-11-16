@@ -23,10 +23,13 @@
 
         <ul class="flex flex-col gap-8 lg:flex-row">
             @auth
-            <li></li>
+            <x-ui.auth-dropdown />
             @else
             <li>
-                <x-ui.main-button to="auth.login" variant="primary">Iniciar Sessión</x-ui.main-button>
+                <x-ui.nav-link to="login">Sign in</x-ui.nav-link>
+            </li>
+            <li>
+                <x-ui.nav-link to="register">Sign up</x-ui.nav-link>
             </li>
             @endauth
         </ul>

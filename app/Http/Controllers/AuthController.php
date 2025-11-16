@@ -21,7 +21,14 @@ class AuthController extends Controller
             'password' => 'required'
         ]);
 
-        if ($service->login($credentials)) {
+        $user = $service->login($credentials);
+
+        if ($user) {
+            if ($user->role && $user->role->name === 'admin') {
+                return redirect()->route('admin.dashboard')
+                    ->with('success', 'Signed in successfully as admin.');
+            }
+
             return redirect()->route('welcome')
                 ->with('success', 'Signed in successfully.');
         }

@@ -2,6 +2,7 @@
 
 namespace App\Services\Auth;
 
+use App\Models\User;
 use App\Repositories\Interfaces\UserRepositoryInterface;
 use App\Repositories\Interfaces\RoleRepositoryInterface;
 use Illuminate\Support\Facades\Auth;
@@ -21,10 +22,15 @@ class AuthService implements AuthServiceInterface
         $this->roles = $roles;
     }
 
-    public function login(array $credentials): bool
+    public function login(array $credentials): ?User
     {
-        return Auth::attempt($credentials);
+        if (Auth::attempt($credentials)) {
+            return Auth::user();
+        }
+
+        return null;
     }
+
 
     public function register(array $data)
     {

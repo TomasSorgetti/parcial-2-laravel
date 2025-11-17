@@ -3,20 +3,26 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Article;
+use App\Services\Interfaces\ArticleServiceInterface;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
-    public function show()
+    public function show(ArticleServiceInterface $articles)
     {
-        return view('admin.blog');
+        $articles = $articles->getAll(2);
+        return view('admin.blog.list', compact('articles'));
+    }
+
+    public function showAddNew()
+    {
+        return view('admin.blog.add-new');
     }
 
     /**
      * todo -> refactor a service y repository
      */
-    public function save(Request $request)
+    public function save(Request $request, ArticleServiceInterface $articleService)
     {
         $data = $request->validate([
             'title' => 'required|string|max:255',
@@ -30,8 +36,9 @@ class BlogController extends Controller
             $data['image'] = $request->file('image')->store('articles', 'public');
         }
 
-        Article::create($data);
+        $articleService->create($data);
 
-        return redirect()->route('admin.blog')->with('success', 'Artículo creado correctamente.');
+        return redirect()->route('admin.blog')
+            ->with('success', 'Blog post created successfully.');
     }
 }

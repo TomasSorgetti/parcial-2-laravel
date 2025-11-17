@@ -6,10 +6,17 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\Admin\BlogController as AdminBlogController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ErrorController;
 
 Route::get('/', [HomeController::class, 'show'])
     ->name('home');
+
+Route::get('/blog', [BlogController::class, 'show'])
+    ->name('blog');
+
+Route::get('/blog/{slug}', [BlogController::class, 'showDetail'])
+    ->name('blog.detail');
 
 // login
 Route::get('/auth/login', [AuthController::class, 'showLoginForm'])->name('login')->middleware('guest');
@@ -33,14 +40,24 @@ Route::get('/admin/dashboard', [AdminDashboardController::class, 'show'])
     ->name('admin.dashboard')
     ->middleware('auth')
     ->middleware('admin');
-    
+
 Route::get('/admin/blog', [AdminBlogController::class, 'show'])
     ->name('admin.blog')
     ->middleware('auth')
     ->middleware('admin');
 
+Route::get('/admin/blog/edit/{id}', [AdminBlogController::class, 'show'])
+    ->name('admin.blog.edit')
+    ->middleware('auth')
+    ->middleware('admin');
+
 Route::post('/admin/blog', [AdminBlogController::class, 'save'])
     ->name('admin.blog')
+    ->middleware('auth')
+    ->middleware('admin');
+
+Route::get('/admin/blog/add-new', [AdminBlogController::class, 'showAddNew'])
+    ->name('admin.blog.create')
     ->middleware('auth')
     ->middleware('admin');
 

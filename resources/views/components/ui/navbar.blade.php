@@ -17,7 +17,7 @@
                 <span class="text-font-primary font-light cursor-not-allowed">Teachers</span>
             </li>
             <li>
-                <x-ui.nav-link to="welcome">Blog</x-ui.nav-link>
+                <x-ui.nav-link to="blog">Blog</x-ui.nav-link>
             </li>
         </ul>
 

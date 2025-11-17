@@ -19,7 +19,7 @@
             <p class="max-w-150 text-xl font-normal">Access exam-style IB Math exercises, worksheets, and teaching materials. Practice with real IB-style questions and prepare confidently for your exams.</p>
 
             <div class="flex items-center gap-8">
-                <x-ui.main-button to="/register" variant="primary" size="lg" dataLabel="Start now with Math Spark">Get started</x-ui.main-button>
+                <x-ui.main-button to="/auth/register" variant="primary" size="lg" dataLabel="Start now with Math Spark">Get started</x-ui.main-button>
                 <a
                     href="#"
                     aria-label="Learn how it works Math Spark"

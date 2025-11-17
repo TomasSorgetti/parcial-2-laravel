@@ -4,12 +4,13 @@ namespace App\Repositories\Eloquent;
 
 use App\Models\User;
 use App\Repositories\Interfaces\UserRepositoryInterface;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class UserRepository implements UserRepositoryInterface
 {
-    public function findAll(): array
+    public function getAll(int $perPage = 10): LengthAwarePaginator
     {
-        return User::all()->toArray();
+        return User::with('role')->paginate($perPage);
     }
 
     public function findById(int $id): ?User

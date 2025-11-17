@@ -3,10 +3,11 @@
 namespace App\Repositories\Interfaces;
 
 use App\Models\User;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 interface UserRepositoryInterface
 {
-    public function findAll(): array;
+    public function getAll(int $perPage = 10): LengthAwarePaginator;
 
     public function findById(int $id): ?User;
 

@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Pagination\Paginator;
 
 // repositories
 use App\Repositories\Interfaces\UserRepositoryInterface;
@@ -17,8 +18,10 @@ use App\Repositories\Interfaces\ExerciseRepositoryInterface;
 use App\Repositories\Eloquent\ExerciseRepository;
 
 // services
-use App\Services\Auth\AuthService;
 use App\Services\Interfaces\AuthServiceInterface;
+use App\Services\Interfaces\UserServiceInterface;
+use App\Services\AuthService;
+use App\Services\UserService;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -33,10 +36,12 @@ class AppServiceProvider extends ServiceProvider
 
         // services
         $this->app->bind(AuthServiceInterface::class, AuthService::class);
+        $this->app->bind(UserServiceInterface::class, UserService::class);
     }
 
     public function boot(): void
     {
-        //
+        // por algun motivo no funciona (?)
+        Paginator::useTailwind();
     }
 }

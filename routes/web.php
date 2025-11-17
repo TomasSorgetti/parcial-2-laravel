@@ -33,7 +33,7 @@ Route::get('/admin/dashboard', [AdminDashboardController::class, 'show'])
     ->name('admin.dashboard')
     ->middleware('auth')
     ->middleware('admin');
-{!! richText('content', old('content')) !!}
+    
 Route::get('/admin/blog', [AdminBlogController::class, 'show'])
     ->name('admin.blog')
     ->middleware('auth')

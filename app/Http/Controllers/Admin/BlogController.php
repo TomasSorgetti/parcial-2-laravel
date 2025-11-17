@@ -22,8 +22,8 @@ class BlogController extends Controller
 
     public function showEdit(ArticleServiceInterface $articleService)
     {
-        $slug = request('slug');
-        $article = $articleService->getDetail($slug);
+        $id = request('id');
+        $article = $articleService->getById($id);
 
         return view('admin.blog.edit', compact('article'));
     }

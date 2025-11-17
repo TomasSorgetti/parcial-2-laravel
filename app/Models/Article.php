@@ -13,6 +13,7 @@ class Article extends Model
         'summary',
         'content',
         'image',
+        'views',
     ];
 
     // protected $casts = [

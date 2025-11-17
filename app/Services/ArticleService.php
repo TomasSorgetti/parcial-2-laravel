@@ -21,6 +21,12 @@ class ArticleService implements ArticleServiceInterface
         return $this->articles->getAll($perPage);
     }
 
+    public function getById(string $id): Article
+    {
+
+        return $this->articles->getById($id);
+    }
+
     public function getDetail(string $slug): Article
     {
         $this->articles->incrementView($slug);

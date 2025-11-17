@@ -11,7 +11,10 @@ interface ArticleRepositoryInterface
 
     public function getBySlug(string $slug): Article;
 
+    // deberia ser int id?
+    public function getById(string $id): Article;
+
     public function create(array $data): Article;
 
-    public function incrementView($slug): void;
+    public function incrementView(string $slug): void;
 }

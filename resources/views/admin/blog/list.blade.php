@@ -49,12 +49,12 @@
                         </div>
 
                         <div class="col-span-1 flex items-center justify-center ">
-                            0
+                            {{ $article->views ?? 0 }}
                         </div>
 
                         <div class="flex items-end justify-end col-span-1 gap-2">
                             <a
-                                href="{{ route('admin.blog.edit', $article->slug) }}"
+                                href="{{ route('admin.blog.edit', $article->id) }}"
                                 class="p-1 hover:bg-blue-50 rounded-lg">
                                 <x-eva-edit class="w-6 h-6 text-font-primary" />
                             </a>

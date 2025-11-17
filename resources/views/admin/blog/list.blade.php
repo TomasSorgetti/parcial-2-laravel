@@ -17,7 +17,7 @@
             @if ($articles->isEmpty())
             <p class="text-center py-10 text-gray-600">
                 There are no blog posts.
-                <a href="{{ route('admin.blog.add') }}" class="font-semibold underline">
+                <a href="{{ route('admin.blog.create') }}" class="font-semibold underline">
                     Create a new one.
                 </a>
             </p>
@@ -54,9 +54,9 @@
 
                         <div class="flex items-end justify-end col-span-1 gap-2">
                             <a
-                                href="{{ route('admin.blog.edit', $article->id) }}"
+                                href="{{ route('admin.blog.edit', $article->slug) }}"
                                 class="p-1 hover:bg-blue-50 rounded-lg">
-                                <x-eva-edit class="w-6 h-6 text-blue-600" />
+                                <x-eva-edit class="w-6 h-6 text-font-primary" />
                             </a>
 
                             <button class="p-1 hover:bg-red-50 rounded-lg">

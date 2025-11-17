@@ -46,7 +46,7 @@ Route::get('/admin/blog', [AdminBlogController::class, 'show'])
     ->middleware('auth')
     ->middleware('admin');
 
-Route::get('/admin/blog/edit/{id}', [AdminBlogController::class, 'show'])
+Route::get('/admin/blog/edit/{slug}', [AdminBlogController::class, 'showEdit'])
     ->name('admin.blog.edit')
     ->middleware('auth')
     ->middleware('admin');

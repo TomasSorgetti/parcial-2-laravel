@@ -11,17 +11,24 @@
         </div>
 
         <section class="mt-10 flex flex-wrap gap-4">
+            @if ($articles->isEmpty())
+            <p>No articles found.</p>
+            @else
             @foreach ($articles as $article)
-            <article class="p-6 min-h-100 w-full max-w-xs rounded-xl bg-white shadow flex flex-col justify-between">
-                <div>
-                    <h2 class="font-semibold text-xl">
-                        {{ $article->title }}
-                    </h2>
-                    <p class="font-light text-base mt-6">{{ $article->summary }}</p>
+            <article class="min-h-105 w-full max-w-xs rounded-xl overflow-hidden bg-white shadow flex flex-col justify-between hover:shadow-xl transition-all duration-400">
+                <img src="{{ $article->image }}" alt="{{$article->image}}">
+                <div class="px-6 py-4 h-full flex flex-col items-start justify-between">
+                    <div>
+                        <h2 class="font-semibold text-xl">
+                            {{ $article->title }}
+                        </h2>
+                        <p class="font-light text-base mt-2 text-font-primary/70">{{ $article->summary }}</p>
+                    </div>
+                    <a href="{{ route('blog.detail', ['slug' => $article->slug]) }}" class="underline font-semibold">Read more</a>
                 </div>
-                <a href="{{ route('blog.detail', ['slug' => $article->slug]) }}" class="underline font-semibold">Read more</a>
             </article>
             @endforeach
+            @endif
         </section>
     </main>
 </x-layouts.main>

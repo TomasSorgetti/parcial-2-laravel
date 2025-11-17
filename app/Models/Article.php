@@ -15,7 +15,7 @@ class Article extends Model
         'image',
     ];
 
-    protected $casts = [
-        'content' => AsRichTextContent::class,
-    ];
+    // protected $casts = [
+    //     'content' => AsRichTextContent::class,
+    // ];
 }

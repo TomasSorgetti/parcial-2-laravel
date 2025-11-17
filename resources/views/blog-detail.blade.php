@@ -2,12 +2,16 @@
     <x-slot:title>{{ $article->title }} - Constructly</x-slot:title>
     <x-slot:description>{{ $article->summary }}</x-slot:description>
 
-    <section class="container mx-auto max-w-6xl py-32">
-        <h1 class="text-font-primary text-5xl font-bold">{{ $article->title }}</h1>
+    <main class="container mx-auto max-w-6xl py-20">
+        <div class="w-full overflow-auto h-80">
+            <img src="{{ $article->image }}" alt="{{$article->image}}" draggable="false" loading="eager" class="w-full h-full object-cover">
+        </div>
+
+        <h1 class="text-font-primary text-5xl font-bold mt-10">{{ $article->title }}</h1>
 
         <div class="prose mt-10">
             {!! $article->content !!}
         </div>
 
-    </section>
+    </main>
 </x-layouts.main>

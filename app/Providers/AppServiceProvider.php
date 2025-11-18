@@ -8,24 +8,28 @@ use Illuminate\Pagination\Paginator;
 
 // repositories
 use App\Repositories\Interfaces\UserRepositoryInterface;
-use App\Repositories\Eloquent\UserRepository;
 use App\Repositories\Interfaces\RoleRepositoryInterface;
-use App\Repositories\Eloquent\RoleRepository;
 use App\Repositories\Interfaces\CategoryRepositoryInterface;
-use App\Repositories\Eloquent\CategoryRepository;
 use App\Repositories\Interfaces\LevelRepositoryInterface;
-use App\Repositories\Eloquent\LevelRepository;
 use App\Repositories\Interfaces\ExerciseRepositoryInterface;
-use App\Repositories\Eloquent\ExerciseRepository;
 use App\Repositories\Interfaces\ArticleRepositoryInterface;
+use App\Repositories\Eloquent\UserRepository;
+use App\Repositories\Eloquent\RoleRepository;
+use App\Repositories\Eloquent\CategoryRepository;
+use App\Repositories\Eloquent\LevelRepository;
+use App\Repositories\Eloquent\ExerciseRepository;
 
 // services
 use App\Services\Interfaces\AuthServiceInterface;
 use App\Services\Interfaces\UserServiceInterface;
 use App\Services\Interfaces\ArticleServiceInterface;
+use App\Services\Interfaces\ExerciseServiceInterface;
 use App\Services\AuthService;
 use App\Services\UserService;
 use App\Services\ArticleService;
+use App\Services\CategoryService;
+use App\Services\ExerciseService;
+use App\Services\Interfaces\CategoryServiceInterface;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -43,6 +47,8 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(AuthServiceInterface::class, AuthService::class);
         $this->app->bind(UserServiceInterface::class, UserService::class);
         $this->app->bind(ArticleServiceInterface::class, ArticleService::class);
+        $this->app->bind(ExerciseServiceInterface::class, ExerciseService::class);
+        $this->app->bind(CategoryServiceInterface::class, CategoryService::class);
     }
 
     public function boot(): void

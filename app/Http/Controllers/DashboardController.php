@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\Interfaces\CategoryServiceInterface;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-    public function show()
+    public function show(CategoryServiceInterface $categoryService)
     {
-        return view('dashboard/welcome');
+        $categories = $categoryService->getAll();
+
+        return view('dashboard/welcome', compact('categories'));
     }
 }

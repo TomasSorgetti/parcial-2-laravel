@@ -8,10 +8,10 @@
     <ul id="authDropdownMenu" class="absolute top-12 right-0 min-w-40 bg-white text-black rounded hidden flex-col gap-4 shadow-xl border border-black/10">
         @if(auth()->check() && auth()->user()->role?->name === 'admin')
         <li>
-            <a href="{{ route('admin.dashboard') }}" class="w-full py-2 block hover:bg-black/5 px-4">Dashboard</a>
+            <a href="{{ route('admin.dashboard') }}" class="w-full py-2 block hover:bg-black/5 px-4">Admin Dashboard</a>
         </li>
         @endif
-        <li><a href="{{ route('welcome') }}" class="w-full py-2 block hover:bg-black/5 px-4">Perfil</a></li>
+        <li><a href="{{ route('profile') }}" class="w-full py-2 block hover:bg-black/5 px-4">Profile</a></li>
         <li>
             <form action="{{ route('logout') }}" method="post">
                 @csrf

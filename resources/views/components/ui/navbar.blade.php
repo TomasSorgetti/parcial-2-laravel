@@ -6,7 +6,7 @@
             Math Spark
         </a>
 
-        <ul class="flex flex-col gap-8 lg:flex-row">
+        <ul class="flex flex-col gap-8 lg:flex-row lg:items-center">
             <li>
                 <x-ui.nav-link to="home">Home</x-ui.nav-link>
             </li>
@@ -19,6 +19,11 @@
             <li>
                 <x-ui.nav-link to="blog">Blog</x-ui.nav-link>
             </li>
+            @auth
+            <li>
+                <a href="{{ route('welcome') }}" class="py-2 px-6 bg-primary text-font-invert rounded font-semibold">Exercises</a>
+            </li>
+            @endauth
         </ul>
 
         <ul class="flex flex-col gap-8 lg:flex-row">

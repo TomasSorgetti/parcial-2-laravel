@@ -4,15 +4,16 @@ namespace App\Repositories\Eloquent;
 
 use App\Models\Exercise;
 use App\Repositories\Interfaces\ExerciseRepositoryInterface;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class ExerciseRepository implements ExerciseRepositoryInterface
 {
-    public function findAll(): array
+    public function getAll($perPage = 10): LengthAwarePaginator
     {
-        return Exercise::all()->toArray();
+        return Exercise::orderBy('id', 'desc')->paginate($perPage);
     }
 
-    public function findById(int $id): ?Exercise
+    public function getById(int $id): ?Exercise
     {
         return Exercise::find($id);
     }

@@ -4,15 +4,16 @@ namespace App\Repositories\Eloquent;
 
 use App\Models\Category;
 use App\Repositories\Interfaces\CategoryRepositoryInterface;
+use Illuminate\Support\Collection;
 
 class CategoryRepository implements CategoryRepositoryInterface
 {
-    public function findAll(): array
+    public function getAll(): Collection
     {
-        return Category::all()->toArray();
+        return Category::withCount('exercises')->get();
     }
 
-    public function findById(int $id): ?Category
+    public function getById(int $id): ?Category
     {
         return Category::find($id);
     }

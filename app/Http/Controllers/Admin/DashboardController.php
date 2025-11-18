@@ -14,4 +14,12 @@ class DashboardController extends Controller
 
         return view('admin.dashboard', compact('users'));
     }
+
+    /**
+     * todo
+     */
+    public function softDeleteUser()
+    {
+        return;
+    }
 }

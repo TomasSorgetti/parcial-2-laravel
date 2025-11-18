@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Models\Exercise;
 use App\Models\User;
 use App\Repositories\Interfaces\ExerciseRepositoryInterface;
 use App\Services\Interfaces\ExerciseServiceInterface;
@@ -16,8 +17,23 @@ class ExerciseService implements ExerciseServiceInterface
         $this->exercise = $exercise;
     }
 
-    public function getAll(int $perPage = 10): LengthAwarePaginator
+    public function getAll(string $categoryId, int $perPage = 10): LengthAwarePaginator
     {
-        return $this->exercise->getAll($perPage);
+        return $this->exercise->getAllByCategoryId($categoryId, $perPage);
+    }
+
+    public function getAllBySlug(string $slug, int $perPage = 10): LengthAwarePaginator
+    {
+        return $this->exercise->getAllByCategorySlug($slug, $perPage);
+    }
+
+    public function getOneBySlug(string $slug): ?Exercise
+    {
+        return $this->exercise->getOneBySlug($slug);
+    }
+
+    public function getOneById(string $exerciseId): ?Exercise
+    {
+        return $this->exercise->getById($exerciseId);
     }
 }

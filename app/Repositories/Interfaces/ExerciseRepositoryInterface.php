@@ -7,7 +7,13 @@ use Illuminate\Pagination\LengthAwarePaginator;
 
 interface ExerciseRepositoryInterface
 {
-    public function getAll($perPage = 10): LengthAwarePaginator;
+    public function getAll(int $perPage = 10): LengthAwarePaginator;
+
+    public function getAllByCategoryId(string $categoryId, int $perPage = 10): LengthAwarePaginator;
+
+    public function getAllByCategorySlug(string $slug, int $perPage = 10): LengthAwarePaginator;
+
+    public function getOneBySlug(string $slug): ?Exercise;
 
     public function getById(int $id): ?Exercise;
 

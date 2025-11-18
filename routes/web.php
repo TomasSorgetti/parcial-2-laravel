@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\Admin\BlogController as AdminBlogController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ErrorController;
+use App\Http\Controllers\ExerciseController;
 use App\Http\Controllers\UserController;
 
 Route::get('/', [HomeController::class, 'show'])
@@ -35,6 +36,14 @@ Route::get('/auth/verify-email', [AuthController::class, 'showVerifyEmail'])->na
 
 Route::get('/welcome', [DashboardController::class, 'show'])
     ->name('welcome')
+    ->middleware('auth');
+
+Route::get('/exercises/{slug}', [ExerciseController::class, 'show'])
+    ->name('exercises')
+    ->middleware('auth');
+
+Route::get('/exercise/{slug}', [ExerciseController::class, 'showExercise'])
+    ->name('exercise')
     ->middleware('auth');
 
 Route::get('/account/profile', [UserController::class, 'showProfile'])

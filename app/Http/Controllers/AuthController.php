@@ -13,6 +13,9 @@ class AuthController extends Controller
         return view("auth.login");
     }
 
+    /**
+     * todo -> use transaction & create a new Session
+     */
     public function login(Request $request, AuthServiceInterface $service)
     {
         $credentials = $request->validate([

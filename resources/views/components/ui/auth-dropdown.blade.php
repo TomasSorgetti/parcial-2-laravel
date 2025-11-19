@@ -11,7 +11,10 @@
             <a href="{{ route('admin.dashboard') }}" class="w-full py-2 block hover:bg-black/5 px-4">Admin Dashboard</a>
         </li>
         @endif
-        <li><a href="{{ route('profile') }}" class="w-full py-2 block hover:bg-black/5 px-4">Profile</a></li>
+        <li>
+            <!-- <a href="{{ route('profile') }}" class="w-full py-2 block hover:bg-black/5 px-4">Profile</a> -->
+            <span class="w-full py-2 block hover:bg-black/5 px-4 cursor-not-allowed">Profile</span>
+        </li>
         <li>
             <form action="{{ route('logout') }}" method="post">
                 @csrf

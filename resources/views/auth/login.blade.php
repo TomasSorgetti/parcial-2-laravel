@@ -2,14 +2,13 @@
     <x-slot:title>Math Spark | Login Page</x-slot:title>
     <x-slot:description>Login page</x-slot:description>
 
-    <main class="h-full w-full flex items-center justify-center py-32">
+    <main class="h-full w-full flex items-center justify-center py-32 bg-cover bg-no-repeat" style="background: url('/images/auth-bg.webp');">
         <form action="{{ route('login') }}" method="POST"
-            class="w-full max-w-112.5 p-4 md:p-8 rounded-2xl text-font-invert bg-cover bg-no-repeat"
-            style="background: url('/images/auth-bg.webp');">
+            class="w-full max-w-112.5 p-4 md:p-8 rounded-2xl text-font-primary bg-white">
             @csrf
             <div class="mb-6">
                 <h1 class="font-bold text-3xl">Login to Math Spark</h1>
-                <p class="mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <p class="mt-2">Sign in to track your progress and continue your math journey.</p>
             </div>
 
             <x-ui.google-button>Sign in with Google</x-ui.google-button>
@@ -27,14 +26,14 @@
                     <input type="email" id="email" name="email"
                         value="{{ old('email') }}"
                         placeholder="Enter your email..."
-                        class="bg-white w-full h-12 rounded text-font-primary p-2">
+                        class="bg-white w-full h-12 rounded border border-black/15 shadow-xs text-font-primary p-2">
                 </div>
 
                 <div class="flex flex-col items-start gap-1 w-full">
                     <label for="password">Password:</label>
                     <input type="password" id="password" name="password"
                         placeholder="********"
-                        class="bg-white w-full h-12 rounded text-font-primary p-2">
+                        class="bg-white w-full h-12 rounded border border-black/15 shadow-xs text-font-primary p-2">
                 </div>
             </div>
 

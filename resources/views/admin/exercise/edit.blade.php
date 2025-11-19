@@ -2,7 +2,7 @@
     <x-slot:title>Math Spark | Admin Edit Exercise</x-slot:title>
     <x-slot:description>Admin Edit Exercise</x-slot:description>
 
-    <main class="mt-32 max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-lg border border-black/5">
+    <main class="my-32 max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-lg border border-black/5">
 
         <h1 class="text-3xl font-bold mb-6 text-center">Edit Exercise: {{ $exercise->title }}</h1>
 

@@ -2,7 +2,7 @@
     <x-slot:title>Math Spark | Home Page</x-slot:title>
     <x-slot:description>Pagina de Inicio</x-slot:description>
 
-    <main class="mt-32 container mx-auto max-w-4xl">
+    <main class="my-32 container mx-auto max-w-4xl">
         <h1 class="text-3xl font-bold">Admin Dashboard Page</h1>
 
         <div class="mt-12 flex items-center justify-between">

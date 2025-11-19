@@ -3,6 +3,7 @@
     <x-slot:description>Category Exercises</x-slot:description>
 
     <main class="mt-20">
+        <!-- todo-> create banner -->
         <section>
             <h1 class="text-5xl font-semibold text-center py-10">Exercises</h1>
         </section>

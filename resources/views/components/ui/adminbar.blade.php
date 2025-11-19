@@ -5,9 +5,6 @@
                 <x-ui.nav-link to="admin.dashboard">Dashboard</x-ui.nav-link>
             </li>
             <li>
-                <x-ui.nav-link to="admin.blog">Blog</x-ui.nav-link>
-            </li>
-            <li>
                 <x-ui.nav-link to="admin.categories">Categories</x-ui.nav-link>
             </li>
             <li>
@@ -15,6 +12,9 @@
             </li>
             <li>
                 <x-ui.nav-link to="admin.exercises">Exercises</x-ui.nav-link>
+            </li>
+            <li>
+                <x-ui.nav-link to="admin.blog">Blog</x-ui.nav-link>
             </li>
             <li>
                 <span class="cursor-not-allowed">Settings</span>

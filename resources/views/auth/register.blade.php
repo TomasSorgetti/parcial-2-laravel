@@ -2,15 +2,14 @@
     <x-slot:title>Math Spark | Register Page</x-slot:title>
     <x-slot:description>Create an account</x-slot:description>
 
-    <main class="h-full w-full flex items-center justify-center py-32">
+    <main class="h-full w-full flex items-center justify-center py-32 bg-cover bg-no-repeat" style="background: url('/images/auth-bg.webp');">
         <form action="{{ route('register') }}"
             method="POST"
-            class="space-y-4 w-full max-w-112.5 p-4 md:p-8 rounded-2xl text-font-invert bg-cover bg-no-repeat"
-            style="background: url('/images/auth-bg.webp');">
+            class="space-y-4 w-full max-w-112.5 p-4 md:p-8 rounded-2xl text-font-primary bg-white">
             @csrf
             <div>
                 <h1 class="font-bold text-3xl">Register to Math Spark</h1>
-                <p class="mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <p class="mt-2">Create your account and start practicing math with interactive exercises and personalized challenges.</p>
             </div>
 
             <x-ui.google-button>Sign up with Google</x-ui.google-button>
@@ -19,12 +18,13 @@
 
             <div class="space-y-4 w-full">
 
+                <!-- todo -> create component -->
                 <div class="relative flex flex-col items-start gap-1 w-full">
                     <label for="username">Username:</label>
                     <input type="text" id="username" name="username"
                         value="{{ old('username') }}"
                         placeholder="Enter your username..."
-                        class="bg-white w-full h-12 rounded text-font-primary p-2">
+                        class="bg-white w-full h-12 rounded text-font-primary p-2 border border-black/15 shadow-xs">
                     @error('username')
                     <p class="text-red-500 text-sm absolute --bottom-5 left-0">{{ $message }}</p>
                     @enderror
@@ -35,7 +35,7 @@
                     <input type="email" id="email" name="email"
                         value="{{ old('email') }}"
                         placeholder="Enter your email..."
-                        class="bg-white w-full h-12 rounded text-font-primary p-2">
+                        class="bg-white w-full h-12 rounded text-font-primary p-2 border border-black/15 shadow-xs">
                     @error('email')
                     <p class="text-red-500 text-sm absolute -bottom-5 left-0">{{ $message }}</p>
                     @enderror
@@ -45,13 +45,14 @@
                     <label for="password">Password:</label>
                     <input type="password" id="password" name="password"
                         placeholder="********"
-                        class="bg-white w-full h-12 rounded text-font-primary p-2">
+                        class="bg-white w-full h-12 rounded text-font-primary p-2 border border-black/15 shadow-xs">
                     @error('password')
                     <p class="text-red-500 text-sm absolute --bottom-5 left-0">{{ $message }}</p>
                     @enderror
                 </div>
             </div>
 
+            <!-- todo -> create component -->
             <button type="submit"
                 class="w-full mt-6 cursor-pointer bg-primary text-text-invert h-12 flex items-center justify-center gap-2 text-font-invert font-semibold rounded">
                 Sign up

@@ -60,6 +60,9 @@ class LevelController extends Controller
         return view("admin.level.confirm-delete", compact("level"));
     }
 
+    /**
+     * todo -> fix cascade delete on exercises
+     */
     public function delete(string $id, LevelServiceInterface $levelService)
     {
         $levelService->delete($id);

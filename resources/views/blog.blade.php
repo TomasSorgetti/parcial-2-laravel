@@ -3,6 +3,7 @@
     <x-slot:description>Pagina de blog</x-slot:description>
 
     <main class="my-32 container mx-auto">
+        <!-- todo-> create banner -->
         <h1 class="text-3xl font-bold">Blog page</h1>
         <div class="mt-6">
             <form>

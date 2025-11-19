@@ -68,6 +68,9 @@ class CategoryController extends Controller
         return view("admin.category.confirm-delete", compact("category"));
     }
 
+    /**
+     * todo -> fix cascade delete on exercises
+     */
     public function delete(string $id, CategoryServiceInterface $categoryService)
     {
         $categoryService->delete($id);

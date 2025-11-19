@@ -1,7 +1,7 @@
 <x-layouts.admin>
     <x-slot:title>Delete Exercise</x-slot:title>
 
-    <main class="mt-32 max-w-xl mx-auto bg-white p-8 rounded-xl shadow-lg border border-black/5">
+    <main class="my-32 max-w-xl mx-auto bg-white p-8 rounded-xl shadow-lg border border-black/5">
 
         <h1 class="text-2xl font-bold mb-6 text-center text-red-600">
             Delete Exercise

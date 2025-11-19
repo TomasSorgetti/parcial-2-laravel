@@ -2,7 +2,7 @@
     <x-slot:title>Math Spark | Admin Exercises</x-slot:title>
     <x-slot:description>Admin Exercises</x-slot:description>
 
-    <main class="mt-32 container mx-auto max-w-4xl">
+    <main class="my-32 container mx-auto max-w-4xl">
         <h1 class="text-3xl font-bold mb-6 text-center">Admin Exercises Page</h1>
 
         <div class="flex items-center justify-between py-4">

@@ -3,11 +3,12 @@
     <x-slot:description>Exercises</x-slot:description>
 
     <main class="mt-20">
+        <!-- todo-> create banner -->
         <section>
             <h1 class="text-5xl font-semibold text-center py-20">Categories page</h1>
         </section>
 
-        <ul class="container max-w-4xl mx-auto flex flex-wrap gap-4 mt-20">
+        <ul class="container max-w-4xl mx-auto flex flex-wrap gap-4 my-20">
             @foreach ($categories as $category)
             <!-- todo -> make component -->
             <li class="w-[calc(50%-1.5rem)] rounded-2xl border border-black/5 shadow min-h-55 px-6 py-3 flex flex-col items-start justify-between">

@@ -5,6 +5,7 @@
     <main class="mt-20">
 
         <section>
+            <!-- todo-> create banner -->
             <h1 class="text-4xl md:text-5xl font-bold text-center py-10">
                 {{ $exercise->title }}
             </h1>

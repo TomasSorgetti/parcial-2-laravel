@@ -2,7 +2,7 @@
     <x-slot:title>Math Spark | Admin Categories Page</x-slot:title>
     <x-slot:description>Admin Categories Page</x-slot:description>
 
-    <main class="mt-32 container mx-auto max-w-4xl">
+    <main class="my-32 container mx-auto max-w-4xl">
         <h1 class="text-3xl font-bold mb-6 text-center">Admin Categories Page</h1>
 
         <div class="flex items-center justify-between py-4">

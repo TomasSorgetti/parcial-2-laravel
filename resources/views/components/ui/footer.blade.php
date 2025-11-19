@@ -1,4 +1,4 @@
-<footer class="pt-12 bg-white border-t border-black/10">
+<footer class="relative z-20 pt-12 bg-white border-t border-black/10">
     <div class="container mx-auto">
         <nav class="flex items-start justify-between">
             <a href="{{ route('home') }}" class="font-bold text-4xl min-w-60">Math Spark</a>

@@ -13,10 +13,12 @@
 
 <body class="bg-gray-100">
     <x-ui.navbar />
-    
+
     <div class="min-h-[70vh]">
         {{ $slot }}
     </div>
+
+    <x-ui.footer />
 </body>
 
 </html>

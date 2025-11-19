@@ -86,6 +86,11 @@
                 @error('level_id') <p class="text-red-600 text-sm">{{ $message }}</p> @enderror
             </div>
 
+            <label class="flex items-center gap-2">
+                <input type="checkbox" name="is_free" value="1" {{ old('is_free')}}>
+                <span>Free</span>
+            </label>
+
             <div>
                 <label class="font-semibold">Price (USD)</label>
                 <input type="number" step="0.01" name="price" class="w-full border p-2 rounded"

@@ -57,6 +57,10 @@ Route::get('/account/profile', [UserController::class, 'showProfile'])
     ->name('profile')
     ->middleware('auth');
 
+// Route::get('/checkout', [CheckoutController::class, 'show'])
+//     ->name('checkout')
+//     ->middleware('auth');
+
 Route::get('/admin/dashboard', [AdminDashboardController::class, 'show'])
     ->name('admin.dashboard')
     ->middleware('auth')

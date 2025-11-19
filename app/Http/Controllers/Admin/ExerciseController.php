@@ -48,8 +48,9 @@ class ExerciseController extends Controller
             "exam_board" => "required|in:IB,IGCSE",
             "category_id" => "required|exists:categories,id",
             "level_id" => "required|exists:levels,id",
-            "price" => "required|numeric|min:0",
             "is_published" => "nullable|boolean",
+            'is_free' => 'sometimes|boolean',
+            'price' => 'required_unless:is_free,1|nullable|numeric|min:0',
             "image" => "nullable|image|max:2048",
         ]);
 
@@ -75,8 +76,9 @@ class ExerciseController extends Controller
             "exam_board" => "required|in:IB,IGCSE",
             "category_id" => "required|exists:categories,id",
             "level_id" => "required|exists:levels,id",
-            "price" => "required|numeric|min:0",
             "is_published" => "nullable|boolean",
+            'is_free' => 'sometimes|boolean',
+            'price' => 'required_unless:is_free,1|nullable|numeric|min:0',
             "image" => "nullable|image|max:2048",
         ]);
 

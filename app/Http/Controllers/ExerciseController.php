@@ -22,6 +22,11 @@ class ExerciseController extends Controller
     {
         $exercise = $exerciseService->getOneBySlug($slug, 10);
 
+        // todo-> si es gratuito o si ya lo compro el usuario
+        // if ($exercise->is_free) {
+        //     return view("checkout.checkout", compact("exercise"));
+        // }
+
         return view("dashboard.exercise", compact("exercise"));
     }
 }

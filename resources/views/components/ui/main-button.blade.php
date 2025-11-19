@@ -11,7 +11,7 @@
 $common = "relative z-10 font-medium rounded-full flex items-center justify-center cursor-pointer shadow transition-all";
 
 $variants = [
-'primary' => 'bg-primary text-text-invert hover:bg-primary-hover active:bg-primary-active',
+'primary' => 'bg-primary text-font-invert hover:bg-primary-hover active:bg-primary-active',
 'secondary' => 'bg-background text-text hover:bg-background-bis active:bg-background',
 ];
 

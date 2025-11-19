@@ -18,6 +18,12 @@ class Exercise extends Model
         'image',
         'price',
         'is_published',
+        "is_free"
+    ];
+
+    protected $casts = [
+        "is_published" => "boolean",
+        "is_free" => "boolean",
     ];
 
     public function category()

@@ -21,6 +21,7 @@
         {{ $slot }}
     </div>
 
+    <x-ui.footer />
 </body>
 
 </html>

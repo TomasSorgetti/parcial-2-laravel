@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\Admin\BlogController as AdminBlogController;
 use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 use App\Http\Controllers\Admin\LevelController as AdminLevelController;
+use App\Http\Controllers\Admin\ExerciseController as AdminExerciseController;
 
 Route::get('/', [HomeController::class, 'show'])
     ->name('home');
@@ -119,6 +120,28 @@ Route::get('/admin/levels/edit/{id}', [AdminLevelController::class, 'showEdit'])
     ->middleware('admin');
 Route::put('/admin/levels/edit/{id}', [AdminLevelController::class, 'update'])
     ->name('admin.levels.update')
+    ->middleware('auth')
+    ->middleware('admin');
+
+// admin exercises
+Route::get('/admin/exercises', [AdminExerciseController::class, 'show'])
+    ->name('admin.exercises')
+    ->middleware('auth')
+    ->middleware('admin');
+Route::get('/admin/exercises/add-new', [AdminExerciseController::class, 'showCreate'])
+    ->name('admin.exercises.add-new')
+    ->middleware('auth')
+    ->middleware('admin');
+Route::post('/admin/exercises', [AdminExerciseController::class, 'create'])
+    ->name('admin.exercises.create')
+    ->middleware('auth')
+    ->middleware('admin');
+Route::get('/admin/exercises/edit/{id}', [AdminExerciseController::class, 'showEdit'])
+    ->name('admin.exercises.edit')
+    ->middleware('auth')
+    ->middleware('admin');
+Route::put('/admin/exercises/edit/{id}', [AdminExerciseController::class, 'update'])
+    ->name('admin.exercises.update')
     ->middleware('auth')
     ->middleware('admin');
 

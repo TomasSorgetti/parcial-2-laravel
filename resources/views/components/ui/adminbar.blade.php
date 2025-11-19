@@ -14,7 +14,7 @@
                 <x-ui.nav-link to="admin.levels">Levels</x-ui.nav-link>
             </li>
             <li>
-                <x-ui.nav-link to="admin.categories">Exercises</x-ui.nav-link>
+                <x-ui.nav-link to="admin.exercises">Exercises</x-ui.nav-link>
             </li>
             <li>
                 <span class="cursor-not-allowed">Settings</span>

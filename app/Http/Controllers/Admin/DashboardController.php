@@ -12,7 +12,7 @@ class DashboardController extends Controller
     {
         $users = $userService->getAll(2);
 
-        return view('admin.dashboard', compact('users'));
+        return view("admin.dashboard", compact("users"));
     }
 
     /**

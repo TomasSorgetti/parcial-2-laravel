@@ -12,13 +12,13 @@ class ExerciseController extends Controller
     {
         $exercises = $exerciseService->getAllBySlug($slug, 10);
 
-        return view('dashboard.exercises', compact('exercises'));
+        return view("dashboard.exercises", compact("exercises"));
     }
 
     public function showExercise(ExerciseServiceInterface $exerciseService, $slug)
     {
         $exercise = $exerciseService->getOneBySlug($slug, 10);
 
-        return view('dashboard.exercise', compact('exercise'));
+        return view("dashboard.exercise", compact("exercise"));
     }
 }

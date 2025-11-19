@@ -11,6 +11,6 @@ class DashboardController extends Controller
     {
         $categories = $categoryService->getAll();
 
-        return view('dashboard/welcome', compact('categories'));
+        return view("dashboard/welcome", compact("categories"));
     }
 }

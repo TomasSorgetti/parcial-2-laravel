@@ -12,47 +12,47 @@ class CategoryController extends Controller
     {
         $categories = $categoryService->getAll(5);
 
-        return view('admin.category.list', compact('categories'));
+        return view("admin.category.list", compact("categories"));
     }
 
     public function showEdit(CategoryServiceInterface $categoryService, $id)
     {
         $category = $categoryService->getById($id);
 
-        return view('admin.category.edit', compact('category'));
+        return view("admin.category.edit", compact("category"));
     }
 
     public function showCreate()
     {
-        return view('admin.category.add-new');
+        return view("admin.category.add-new");
     }
 
     public function create(Request $request, CategoryServiceInterface $categoryService)
     {
         $data = $request->validate([
-            'name' => 'required|string|max:255|unique:categories',
-            'slug' => 'required|string|max:255|unique:categories',
-            'description' => 'nullable|string|min:10|max:255',
+            "name" => "required|string|max:255|unique:categories",
+            "slug" => "required|string|max:255|unique:categories",
+            "description" => "nullable|string|min:10|max:255",
         ]);
 
         $categoryService->create($data);
 
-        return redirect()->route('admin.categories')
-            ->with('success', 'Category created successfully.');
+        return redirect()->route("admin.categories")
+            ->with("success", "Category created successfully.");
     }
 
     public function update(Request $request, CategoryServiceInterface $categoryService, $id)
     {
         $data = $request->validate([
-            'name' => 'required|string|max:255|unique:categories,name,' . $id,
-            'slug' => 'required|string|max:255|unique:categories,slug,' . $id,
-            'description' => 'nullable|string|min:10|max:255',
+            "name"        => "required|string|max:255|unique:categories,name," . $id,
+            "slug"        => "required|string|max:255|unique:categories,slug," . $id,
+            "description" => "nullable|string|min:10|max:255",
         ]);
 
         $categoryService->update($id, $data);
 
-        return redirect()->route('admin.categories')
-            ->with('success', 'Category updated successfully.');
+        return redirect()->route("admin.categories")
+            ->with("success", "Category updated successfully.");
     }
 
     public function confirmDelete(string $id, CategoryServiceInterface $categoryService)

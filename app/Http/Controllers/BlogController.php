@@ -11,15 +11,15 @@ class BlogController extends Controller
     {
         $articles = $articleService->getAll(10);
 
-        return view('blog', compact('articles'));
+        return view("blog", compact("articles"));
     }
 
     public function showDetail(ArticleServiceInterface $articleService)
     {
-        $slug = request('slug');
+        $slug = request("slug");
 
         $article = $articleService->getDetail($slug);
 
-        return view('blog-detail', compact('article'));
+        return view("blog-detail", compact("article"));
     }
 }

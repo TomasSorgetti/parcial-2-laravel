@@ -10,8 +10,11 @@ class CategoryRepository implements CategoryRepositoryInterface
 {
     public function getAll($perPage = 10): LengthAwarePaginator
     {
-        return Category::orderBy('id', 'desc')->paginate($perPage);
+        return Category::withCount("exercises")
+            ->orderBy("id", "desc")
+            ->paginate($perPage);
     }
+
 
     public function getById(int $id): ?Category
     {

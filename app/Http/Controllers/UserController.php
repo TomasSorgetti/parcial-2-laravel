@@ -10,6 +10,6 @@ class UserController extends Controller
     public function showProfile()
     {
 
-        return view('account.profile');
+        return view("account.profile");
     }
 }

@@ -43,6 +43,19 @@
             </div>
 
             <div>
+                <label for="description" class="block font-semibold">Description</label>
+                <textarea
+                    id="description"
+                    name="description"
+                    class="w-full border p-2 rounded resize-none h-30"
+                    rows="10"
+                    placeholder="Exercise description...">{{ old('description', $exercise->description) }}</textarea>
+                @error('description')
+                <p class="text-red-600 text-sm">{{ $message }}</p>
+                @enderror
+            </div>
+
+            <div>
                 <label class="font-semibold">Difficulty</label>
                 <select name="difficulty" class="w-full border p-2 rounded">
                     <option value="easy" {{ old('difficulty', $exercise->difficulty) == 'easy' ? 'selected' : '' }}>Easy</option>

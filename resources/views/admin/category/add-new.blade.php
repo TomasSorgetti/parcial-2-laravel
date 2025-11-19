@@ -41,7 +41,7 @@
                 <textarea
                     id="description"
                     name="description"
-                    class="w-full border p-2 rounded"
+                    class="w-full border p-2 rounded h-30 resize-none"
                     rows="10"
                     placeholder="Category description...">{{ old('description') }}</textarea>
                 @error('description')

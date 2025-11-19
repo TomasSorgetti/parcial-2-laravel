@@ -18,8 +18,8 @@
                         <span class="text-font-primary/60 text-sm">Exercises completed</span>
                     </p>
                     <h2 class="text-xl font-semibold">{{ $category->name }}</h2>
+                    <p class="max-w-md mt-4 text-font-primary/80">{{ $category->description }}</p>
                 </div>
-                <p class="max-w-md">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium dicta inventore aliquid praesentium unde.</p>
                 <a href="{{ route('exercises', $category->slug) }}" class="font-semibold hover:underline">See all exercises</a>
             </li>
 

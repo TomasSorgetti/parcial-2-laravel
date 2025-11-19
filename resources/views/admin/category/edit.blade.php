@@ -42,7 +42,7 @@
                 <textarea
                     id="description"
                     name="description"
-                    class="w-full border p-2 rounded"
+                    class="w-full border p-2 rounded resize-none h-30"
                     rows="10"
                     placeholder="Category description...">{{ old('description', $category->description) }}</textarea>
                 @error('description')

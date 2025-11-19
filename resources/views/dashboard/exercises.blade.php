@@ -30,7 +30,7 @@
                         <div>
                             <span class="font-semibold text-primary">{{$exercise->difficulty}}</span>
                             <h2 class="text-xl font-semibold">{{ $exercise->title }}</h2>
-                            <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur nulla quasi quos corrupti reprehenderit quibusdam?</p>
+                            <p class="mt-4 text-font-primary/80">{{$exercise->description}}</p>
                         </div>
                         @if($exercise->is_free)
                         <div class="flex items-center gap-2">

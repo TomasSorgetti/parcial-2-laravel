@@ -7,18 +7,19 @@ use Illuminate\Database\Eloquent\Model;
 class Exercise extends Model
 {
     protected $fillable = [
-        'title',
-        'slug',
-        'statement',
-        'solution',
-        'difficulty',
-        'exam_board',
-        'category_id',
-        'level_id',
-        'image',
-        'price',
-        'is_published',
-        "is_free"
+        "title",
+        "slug",
+        "statement",
+        "solution",
+        "difficulty",
+        "exam_board",
+        "category_id",
+        "level_id",
+        "image",
+        "price",
+        "is_published",
+        "is_free",
+        "description"
     ];
 
     protected $casts = [

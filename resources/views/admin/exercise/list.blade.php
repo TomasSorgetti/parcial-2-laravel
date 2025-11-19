@@ -26,8 +26,8 @@
             <div class="w-full">
                 <div class="grid grid-cols-12 font-semibold border-b pb-3">
                     <div class="col-span-4 flex items-center justify-left">Title</div>
-                    <div class="col-span-4 flex items-center justify-center">Slug</div>
-                    <div class="col-span-1 flex items-center justify-center">Exam</div>
+                    <div class="col-span-4 flex items-center justify-center">Exam Board</div>
+                    <div class="col-span-1 flex items-center justify-center">Price</div>
                     <div class="col-span-2 flex items-center justify-center">Created</div>
                     <div class="col-span-1"></div>
                 </div>
@@ -41,11 +41,17 @@
                         </div>
 
                         <div class="col-span-4 flex items-center justify-center ">
-                            {{ $exercise->slug }}
+                            {{ $exercise->exam_board }}
                         </div>
 
                         <div class="col-span-1 flex items-center justify-center ">
-                            {{ $exercise->exam_board }}
+                            @if($exercise->is_free)
+                            <span class="font-semibold text-green-500">Free</span>
+                            @else
+                            <span class="font-semibold">
+                                ${{ $exercise->price }}
+                            </span>
+                            @endif
                         </div>
 
                         <div class="col-span-2 flex items-center justify-center ">

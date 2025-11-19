@@ -29,16 +29,29 @@
 
             <div>
                 <label class="font-semibold">Statement</label>
-                <textarea name="statement" rows="5" class="w-full border p-2 rounded"
+                <textarea name="statement" rows="5" class="w-full border p-2 rounded resize-none"
                     placeholder="Problem text...">{{ old('statement') }}</textarea>
                 @error('statement') <p class="text-red-600 text-sm">{{ $message }}</p> @enderror
             </div>
 
             <div>
                 <label class="font-semibold">Solution</label>
-                <textarea name="solution" rows="5" class="w-full border p-2 rounded"
+                <textarea name="solution" rows="5" class="w-full border p-2 rounded resize-none"
                     placeholder="Solution text...">{{ old('solution') }}</textarea>
                 @error('solution') <p class="text-red-600 text-sm">{{ $message }}</p> @enderror
+            </div>
+
+            <div>
+                <label for="description" class="block font-semibold">Description</label>
+                <textarea
+                    id="description"
+                    name="description"
+                    class="w-full border p-2 rounded h-30 resize-none"
+                    rows="10"
+                    placeholder="Exercise description...">{{ old('description') }}</textarea>
+                @error('description')
+                <p class="text-red-600 text-sm">{{ $message }}</p>
+                @enderror
             </div>
 
             <div>

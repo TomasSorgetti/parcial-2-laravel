@@ -2,7 +2,7 @@
     <x-slot:title>Math Spark - Blog</x-slot:title>
     <x-slot:description>Pagina de blog</x-slot:description>
 
-    <main class="mt-32 container mx-auto">
+    <main class="my-32 container mx-auto">
         <h1 class="text-3xl font-bold">Blog page</h1>
         <div class="mt-6">
             <form>
@@ -10,14 +10,17 @@
             </form>
         </div>
 
-        <section class="mt-10 flex flex-wrap gap-4">
+        <section class="my-10 flex flex-wrap gap-4">
             @if ($articles->isEmpty())
             <p>No articles found.</p>
             @else
             @foreach ($articles as $article)
+            <!-- todo -> create a card component -->
             <article class="min-h-105 w-full max-w-xs rounded-xl overflow-hidden bg-white shadow flex flex-col justify-between hover:shadow-xl transition-all duration-400">
-                <img src="{{ $article->image }}" alt="{{$article->image}}">
-                <div class="px-6 py-4 h-full flex flex-col items-start justify-between">
+                <div class="w-full h-1/2">
+                    <img src="{{ $article->image }}" alt="{{$article->image}}" class="w-full h-full object-cover">
+                </div>
+                <div class="px-6 py-4 h-1/2 flex flex-col items-start justify-between">
                     <div>
                         <h2 class="font-semibold text-xl">
                             {{ $article->title }}

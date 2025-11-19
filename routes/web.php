@@ -14,6 +14,10 @@ use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 use App\Http\Controllers\Admin\LevelController as AdminLevelController;
 use App\Http\Controllers\Admin\ExerciseController as AdminExerciseController;
 
+/**
+ * Todo -> Refactor en diferentes archivos de ruta
+ */
+
 Route::get('/', [HomeController::class, 'show'])
     ->name('home');
 
@@ -65,6 +69,10 @@ Route::get('/admin/blog', [AdminBlogController::class, 'show'])
     ->middleware('admin');
 Route::get('/admin/blog/edit/{id}', [AdminBlogController::class, 'showEdit'])
     ->name('admin.blog.edit')
+    ->middleware('auth')
+    ->middleware('admin');
+Route::put('/admin/blog/edit/{id}', [AdminBlogController::class, 'update'])
+    ->name('admin.blog.update')
     ->middleware('auth')
     ->middleware('admin');
 Route::post('/admin/blog', [AdminBlogController::class, 'save'])

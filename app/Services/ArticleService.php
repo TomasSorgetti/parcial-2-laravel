@@ -21,22 +21,27 @@ class ArticleService implements ArticleServiceInterface
         return $this->articles->getAll($perPage);
     }
 
-    public function getById(string $id): Article
+    public function getById(string $id): ?Article
     {
 
         return $this->articles->getById($id);
     }
 
-    public function getDetail(string $slug): Article
+    public function getDetail(string $slug): ?Article
     {
         $this->articles->incrementView($slug);
 
         return $this->articles->getBySlug($slug);
     }
 
-    public function create(array $data): Article
+    public function create(array $data): ?Article
     {
         return $this->articles->create($data);
+    }
+
+    public function update(string $id, array $data): ?Article
+    {
+        return $this->articles->update($id, $data);
     }
 
     public function delete(int $id): void

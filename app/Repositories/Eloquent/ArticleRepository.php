@@ -13,19 +13,27 @@ class ArticleRepository implements ArticleRepositoryInterface
         return Article::orderBy('id', 'desc')->paginate($perPage);
     }
 
-    public function getById(string $id): Article
+    public function getById(string $id): ?Article
     {
         return Article::where('id', $id)->firstOrFail();
     }
 
-    public function getBySlug(string $slug): Article
+    public function getBySlug(string $slug): ?Article
     {
         return Article::where('slug', $slug)->firstOrFail();
     }
 
-    public function create(array $data): Article
+    public function create(array $data): ?Article
     {
         return Article::create($data);
+    }
+
+    public function update(string $id, array $data): ?Article
+    {
+        $article = Article::findOrFail($id);
+        $article->update($data);
+
+        return $article;
     }
 
     public function incrementView(string $slug): void

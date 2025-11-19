@@ -7,7 +7,7 @@
             Edit Article: {{ $article->title }}
         </h1>
 
-        <form action="{{ route('admin.blog', $article->id) }}"
+        <form action="{{ route('admin.blog.update', $article->id) }}"
             method="POST"
             enctype="multipart/form-data"
             class="space-y-6">
@@ -91,7 +91,7 @@
 
             <button
                 type="submit"
-                class="w-full py-3 bg-font-primary text-white rounded transition">
+                class="w-full py-3 bg-font-primary text-white rounded transition cursor-pointer">
                 Update Article
             </button>
         </form>

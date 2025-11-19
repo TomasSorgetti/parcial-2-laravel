@@ -2,7 +2,7 @@
     <x-slot:title>{{ $article->title }} - Constructly</x-slot:title>
     <x-slot:description>{{ $article->summary }}</x-slot:description>
 
-    <main class="container mx-auto max-w-6xl py-16">
+    <main class="container mx-auto max-w-5xl py-16">
         <div class="w-full overflow-auto h-80">
             <img src="{{ $article->image }}" alt="{{$article->image}}" draggable="false" loading="eager" class="w-full h-full object-cover">
         </div>

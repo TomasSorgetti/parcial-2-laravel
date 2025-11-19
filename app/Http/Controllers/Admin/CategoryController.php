@@ -27,6 +27,9 @@ class CategoryController extends Controller
         return view("admin.category.add-new");
     }
 
+    /**
+     * todo -> add description
+     */
     public function create(Request $request, CategoryServiceInterface $categoryService)
     {
         $data = $request->validate([
@@ -41,6 +44,9 @@ class CategoryController extends Controller
             ->with("success", "Category created successfully.");
     }
 
+    /**
+     * todo -> add description
+     */
     public function update(Request $request, CategoryServiceInterface $categoryService, $id)
     {
         $data = $request->validate([

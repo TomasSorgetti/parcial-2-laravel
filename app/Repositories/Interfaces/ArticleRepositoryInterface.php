@@ -9,12 +9,14 @@ interface ArticleRepositoryInterface
 {
     public function getAll(int $perPage = 10): LengthAwarePaginator;
 
-    public function getBySlug(string $slug): Article;
+    public function getBySlug(string $slug): ?Article;
 
     // deberia ser int id?
-    public function getById(string $id): Article;
+    public function getById(string $id): ?Article;
 
-    public function create(array $data): Article;
+    public function create(array $data): ?Article;
+
+    public function update(string $id, array $data): ?Article;
 
     public function incrementView(string $slug): void;
 

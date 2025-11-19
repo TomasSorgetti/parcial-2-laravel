@@ -54,9 +54,11 @@
                                 <x-eva-edit class="w-6 h-6 text-font-primary" />
                             </a>
 
-                            <button class="p-1 hover:bg-red-50 rounded-lg">
+                            <a
+                                href="{{ route('admin.categories.confirm-delete', $category->id) }}"
+                                class="p-1 hover:bg-red-50 rounded-lg">
                                 <x-eos-delete class="w-6 h-6 text-red-500" />
-                            </button>
+                            </a>
                         </div>
 
                     </div>

@@ -63,21 +63,26 @@ Route::get('/admin/blog', [AdminBlogController::class, 'show'])
     ->name('admin.blog')
     ->middleware('auth')
     ->middleware('admin');
-
 Route::get('/admin/blog/edit/{id}', [AdminBlogController::class, 'showEdit'])
     ->name('admin.blog.edit')
     ->middleware('auth')
     ->middleware('admin');
-
 Route::post('/admin/blog', [AdminBlogController::class, 'save'])
     ->name('admin.blog')
     ->middleware('auth')
     ->middleware('admin');
-
 Route::get('/admin/blog/add-new', [AdminBlogController::class, 'showAddNew'])
     ->name('admin.blog.create')
     ->middleware('auth')
     ->middleware('admin');
+Route::get("/admin/blog/{id}/delete", [AdminBlogController::class, "confirmDelete"])
+    ->name("admin.blog.confirm-delete")
+    ->middleware('auth')
+    ->middleware('admin');;
+Route::delete("/admin/blog/{id}", [AdminBlogController::class, "delete"])
+    ->name("admin.blog.delete")
+    ->middleware('auth')
+    ->middleware('admin');;
 
 // admin categories
 Route::get('/admin/categories', [AdminCategoryController::class, 'show'])
@@ -100,6 +105,14 @@ Route::put('/admin/categories/edit/{id}', [AdminCategoryController::class, 'upda
     ->name('admin.categories.update')
     ->middleware('auth')
     ->middleware('admin');
+Route::get("/admin/categories/{id}/delete", [AdminCategoryController::class, "confirmDelete"])
+    ->name("admin.categories.confirm-delete")
+    ->middleware('auth')
+    ->middleware('admin');;
+Route::delete("/admin/categories/{id}", [AdminCategoryController::class, "delete"])
+    ->name("admin.categories.delete")
+    ->middleware('auth')
+    ->middleware('admin');;
 
 // admin levels
 Route::get('/admin/levels', [AdminLevelController::class, 'show'])
@@ -122,6 +135,14 @@ Route::put('/admin/levels/edit/{id}', [AdminLevelController::class, 'update'])
     ->name('admin.levels.update')
     ->middleware('auth')
     ->middleware('admin');
+Route::get("/admin/levels/{id}/delete", [AdminLevelController::class, "confirmDelete"])
+    ->name("admin.levels.confirm-delete")
+    ->middleware('auth')
+    ->middleware('admin');;
+Route::delete("/admin/levels/{id}", [AdminLevelController::class, "delete"])
+    ->name("admin.levels.delete")
+    ->middleware('auth')
+    ->middleware('admin');;
 
 // admin exercises
 Route::get('/admin/exercises', [AdminExerciseController::class, 'show'])

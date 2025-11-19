@@ -30,4 +30,9 @@ class LevelRepository implements LevelRepositoryInterface
 
         return $level;
     }
+
+    public function delete(int $id): void
+    {
+        $this->getById($id)->delete();
+    }
 }

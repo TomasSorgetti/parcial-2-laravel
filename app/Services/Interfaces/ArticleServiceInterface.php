@@ -14,4 +14,6 @@ interface ArticleServiceInterface
     public function getDetail(string $slug): Article;
 
     public function create(array $data): Article;
+
+    public function delete(int $id): void;
 }

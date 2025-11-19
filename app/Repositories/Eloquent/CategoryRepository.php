@@ -5,7 +5,6 @@ namespace App\Repositories\Eloquent;
 use App\Models\Category;
 use App\Repositories\Interfaces\CategoryRepositoryInterface;
 use Illuminate\Pagination\LengthAwarePaginator;
-use Illuminate\Support\Collection;
 
 class CategoryRepository implements CategoryRepositoryInterface
 {
@@ -30,5 +29,10 @@ class CategoryRepository implements CategoryRepositoryInterface
         $category->update($data);
 
         return $category;
+    }
+
+    public function delete(int $id): void
+    {
+        $this->getById($id)->delete();
     }
 }

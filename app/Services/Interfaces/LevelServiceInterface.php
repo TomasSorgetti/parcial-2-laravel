@@ -14,4 +14,6 @@ interface LevelServiceInterface
     public function create(array $data): ?Level;
 
     public function update(int $id, array $data): ?Level;
+
+    public function delete(int $id): void;
 }

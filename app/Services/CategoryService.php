@@ -37,4 +37,9 @@ class CategoryService implements CategoryServiceInterface
     {
         return $this->category->update($id, $data);
     }
+
+    public function delete(int $id): void
+    {
+        $this->category->delete($id);
+    }
 }

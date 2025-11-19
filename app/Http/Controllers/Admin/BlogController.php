@@ -64,4 +64,19 @@ class BlogController extends Controller
             return back()->withErrors('Something went wrong.');
         }
     }
+
+    public function confirmDelete(string $id, ArticleServiceInterface $articleService)
+    {
+        $article = $articleService->getById($id);
+
+        return view("admin.article.confirm-delete", compact("article"));
+    }
+
+    public function delete(string $id, ArticleServiceInterface $articleService)
+    {
+        $articleService->delete($id);
+
+        return redirect()->route("admin.blog")
+            ->with("success", "Article deleted successfully.");
+    }
 }

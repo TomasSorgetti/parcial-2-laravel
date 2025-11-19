@@ -54,4 +54,19 @@ class CategoryController extends Controller
         return redirect()->route('admin.categories')
             ->with('success', 'Category updated successfully.');
     }
+
+    public function confirmDelete(string $id, CategoryServiceInterface $categoryService)
+    {
+        $category = $categoryService->getById($id);
+
+        return view("admin.category.confirm-delete", compact("category"));
+    }
+
+    public function delete(string $id, CategoryServiceInterface $categoryService)
+    {
+        $categoryService->delete($id);
+
+        return redirect()->route("admin.categories")
+            ->with("success", "Category deleted successfully.");
+    }
 }

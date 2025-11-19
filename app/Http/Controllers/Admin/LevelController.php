@@ -52,4 +52,19 @@ class LevelController extends Controller
         return redirect()->route('admin.levels')
             ->with('success', 'Level created successfully.');
     }
+
+    public function confirmDelete(string $id, LevelServiceInterface $levelService)
+    {
+        $level = $levelService->getById($id);
+
+        return view("admin.level.confirm-delete", compact("level"));
+    }
+
+    public function delete(string $id, LevelServiceInterface $levelService)
+    {
+        $levelService->delete($id);
+
+        return redirect()->route("admin.levels")
+            ->with("success", "Level deleted successfully.");
+    }
 }

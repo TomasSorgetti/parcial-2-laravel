@@ -36,4 +36,9 @@ class ArticleRepository implements ArticleRepositoryInterface
             $article->increment('views');
         }
     }
+
+    public function delete(string $id): void
+    {
+        $this->getById($id)->delete();
+    }
 }

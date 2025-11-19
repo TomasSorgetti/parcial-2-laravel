@@ -35,4 +35,9 @@ class LevelService implements LevelServiceInterface
     {
         return $this->level->update($id, $data);
     }
+
+    public function delete(int $id): void
+    {
+        $this->level->delete($id);
+    }
 }

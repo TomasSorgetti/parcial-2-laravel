@@ -17,4 +17,6 @@ interface ArticleRepositoryInterface
     public function create(array $data): Article;
 
     public function incrementView(string $slug): void;
+
+    public function delete(string $id): void;
 }

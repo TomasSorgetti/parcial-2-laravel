@@ -38,4 +38,9 @@ class ArticleService implements ArticleServiceInterface
     {
         return $this->articles->create($data);
     }
+
+    public function delete(int $id): void
+    {
+        $this->articles->delete($id);
+    }
 }

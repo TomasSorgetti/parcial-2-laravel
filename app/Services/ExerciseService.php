@@ -50,4 +50,9 @@ class ExerciseService implements ExerciseServiceInterface
     {
         return $this->exercise->update($id, $data);
     }
+
+    public function delete(string $id): void
+    {
+        $this->exercise->delete($id);
+    }
 }

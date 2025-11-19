@@ -20,4 +20,6 @@ interface ExerciseServiceInterface
     public function create(array $data): ?Exercise;
 
     public function update(string $id, array $data): ?Exercise;
+
+    public function delete(string $id): void;
 }

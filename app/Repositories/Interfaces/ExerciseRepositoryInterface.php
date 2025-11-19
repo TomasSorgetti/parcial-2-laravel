@@ -20,4 +20,6 @@ interface ExerciseRepositoryInterface
     public function create(array $data): Exercise;
 
     public function update(int $id, array $data): Exercise;
+
+    public function delete(int $id): void;
 }

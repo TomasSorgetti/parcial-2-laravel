@@ -144,6 +144,14 @@ Route::put('/admin/exercises/edit/{id}', [AdminExerciseController::class, 'updat
     ->name('admin.exercises.update')
     ->middleware('auth')
     ->middleware('admin');
+Route::get("/admin/exercises/{id}/delete", [AdminExerciseController::class, "confirmDelete"])
+    ->name("admin.exercises.confirm-delete")
+    ->middleware('auth')
+    ->middleware('admin');;
+Route::delete("/admin/exercises/{id}", [AdminExerciseController::class, "delete"])
+    ->name("admin.exercises.delete")
+    ->middleware('auth')
+    ->middleware('admin');;
 
 // Error pages
 Route::get('/403', [ErrorController::class, 'show403'])->name('403');

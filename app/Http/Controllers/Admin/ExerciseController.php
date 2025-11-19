@@ -90,4 +90,19 @@ class ExerciseController extends Controller
         return redirect()->route("admin.exercises")
             ->with("success", "Exercise updated successfully.");
     }
+
+    public function confirmDelete(string $id, ExerciseServiceInterface $exerciseService)
+    {
+        $exercise = $exerciseService->getOneById($id);
+
+        return view("admin.exercise.confirm-delete", compact("exercise"));
+    }
+
+    public function delete(string $id, ExerciseServiceInterface $exerciseService)
+    {
+        $exerciseService->delete($id);
+
+        return redirect()->route("admin.exercises")
+            ->with("success", "Exercise deleted successfully.");
+    }
 }

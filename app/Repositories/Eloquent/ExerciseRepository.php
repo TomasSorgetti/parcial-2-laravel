@@ -49,4 +49,9 @@ class ExerciseRepository implements ExerciseRepositoryInterface
 
         return $exercise;
     }
+
+    public function delete(int $id): void
+    {
+        $this->getById($id)->delete();
+    }
 }

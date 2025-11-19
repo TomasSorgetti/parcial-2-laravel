@@ -7,9 +7,6 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="description" content="{{ $description ?? '' }}">
 
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/trix/2.0.0/trix.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/trix/2.0.0/trix.umd.min.js" defer></script> -->
-
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <title>{{ $title ?? 'Admin' }}</title>

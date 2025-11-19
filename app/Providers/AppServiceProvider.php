@@ -30,6 +30,8 @@ use App\Services\ArticleService;
 use App\Services\CategoryService;
 use App\Services\ExerciseService;
 use App\Services\Interfaces\CategoryServiceInterface;
+use App\Services\Interfaces\LevelServiceInterface;
+use App\Services\LevelService;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -49,6 +51,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(ArticleServiceInterface::class, ArticleService::class);
         $this->app->bind(ExerciseServiceInterface::class, ExerciseService::class);
         $this->app->bind(CategoryServiceInterface::class, CategoryService::class);
+        $this->app->bind(LevelServiceInterface::class, LevelService::class);
     }
 
     public function boot(): void

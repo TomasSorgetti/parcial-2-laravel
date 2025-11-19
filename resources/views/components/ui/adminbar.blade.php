@@ -11,7 +11,7 @@
                 <x-ui.nav-link to="admin.categories">Categories</x-ui.nav-link>
             </li>
             <li>
-                <x-ui.nav-link to="admin.categories">Levels</x-ui.nav-link>
+                <x-ui.nav-link to="admin.levels">Levels</x-ui.nav-link>
             </li>
             <li>
                 <x-ui.nav-link to="admin.categories">Exercises</x-ui.nav-link>

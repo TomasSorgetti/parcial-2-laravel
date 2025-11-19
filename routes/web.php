@@ -11,6 +11,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\Admin\BlogController as AdminBlogController;
 use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
+use App\Http\Controllers\Admin\LevelController as AdminLevelController;
 
 Route::get('/', [HomeController::class, 'show'])
     ->name('home');
@@ -82,24 +83,42 @@ Route::get('/admin/categories', [AdminCategoryController::class, 'show'])
     ->name('admin.categories')
     ->middleware('auth')
     ->middleware('admin');
-
 Route::get('/admin/categories/add-new', [AdminCategoryController::class, 'showCreate'])
     ->name('admin.categories.add-new')
     ->middleware('auth')
     ->middleware('admin');
-
 Route::post('/admin/categories', [AdminCategoryController::class, 'create'])
     ->name('admin.categories.create')
     ->middleware('auth')
     ->middleware('admin');
-
 Route::get('/admin/categories/edit/{id}', [AdminCategoryController::class, 'showEdit'])
     ->name('admin.categories.edit')
     ->middleware('auth')
     ->middleware('admin');
-
 Route::put('/admin/categories/edit/{id}', [AdminCategoryController::class, 'update'])
     ->name('admin.categories.update')
+    ->middleware('auth')
+    ->middleware('admin');
+
+// admin levels
+Route::get('/admin/levels', [AdminLevelController::class, 'show'])
+    ->name('admin.levels')
+    ->middleware('auth')
+    ->middleware('admin');
+Route::get('/admin/levels/add-new', [AdminLevelController::class, 'showCreate'])
+    ->name('admin.levels.add-new')
+    ->middleware('auth')
+    ->middleware('admin');
+Route::post('/admin/levels', [AdminLevelController::class, 'create'])
+    ->name('admin.levels.create')
+    ->middleware('auth')
+    ->middleware('admin');
+Route::get('/admin/levels/edit/{id}', [AdminLevelController::class, 'showEdit'])
+    ->name('admin.levels.edit')
+    ->middleware('auth')
+    ->middleware('admin');
+Route::put('/admin/levels/edit/{id}', [AdminLevelController::class, 'update'])
+    ->name('admin.levels.update')
     ->middleware('auth')
     ->middleware('admin');
 

@@ -1,0 +1,19 @@
+<?php
+
+namespace App\Http\Controllers\Admin;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+
+class ExerciseController extends Controller
+{
+    public function show() {}
+
+    public function showEdit() {}
+
+    public function showCreate() {}
+
+    public function create() {}
+
+    public function update() {}
+}

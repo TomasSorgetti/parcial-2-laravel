@@ -3,12 +3,13 @@
 namespace App\Repositories\Interfaces;
 
 use App\Models\Level;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 interface LevelRepositoryInterface
 {
-    public function findAll(): array;
+    public function getAll(int $perPage = 10): LengthAwarePaginator;
 
-    public function findById(int $id): ?Level;
+    public function getById(int $id): ?Level;
 
     public function create(array $data): Level;
 

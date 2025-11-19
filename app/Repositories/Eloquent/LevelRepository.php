@@ -4,15 +4,16 @@ namespace App\Repositories\Eloquent;
 
 use App\Models\Level;
 use App\Repositories\Interfaces\LevelRepositoryInterface;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class LevelRepository implements LevelRepositoryInterface
 {
-    public function findAll(): array
+    public function getAll(int $perPage = 10): LengthAwarePaginator
     {
-        return Level::all()->toArray();
+        return Level::orderBy('id', 'desc')->paginate($perPage);
     }
 
-    public function findById(int $id): ?Level
+    public function getById(int $id): ?Level
     {
         return Level::find($id);
     }

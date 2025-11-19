@@ -22,7 +22,7 @@ class CategoryController extends Controller
         return view('admin.category.edit', compact('category'));
     }
 
-    public function showCreate(CategoryServiceInterface $categoryService)
+    public function showCreate()
     {
         return view('admin.category.add-new');
     }

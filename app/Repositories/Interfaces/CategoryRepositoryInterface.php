@@ -3,11 +3,12 @@
 namespace App\Repositories\Interfaces;
 
 use App\Models\Category;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
 
 interface CategoryRepositoryInterface
 {
-    public function getAll(): Collection;
+    public function getAll($perPage = 10): LengthAwarePaginator;
 
     public function getById(int $id): ?Category;
 

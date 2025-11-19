@@ -4,12 +4,13 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
-use App\Http\Controllers\Admin\BlogController as AdminBlogController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ErrorController;
 use App\Http\Controllers\ExerciseController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
+use App\Http\Controllers\Admin\BlogController as AdminBlogController;
+use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 
 Route::get('/', [HomeController::class, 'show'])
     ->name('home');
@@ -55,6 +56,7 @@ Route::get('/admin/dashboard', [AdminDashboardController::class, 'show'])
     ->middleware('auth')
     ->middleware('admin');
 
+//admin blog
 Route::get('/admin/blog', [AdminBlogController::class, 'show'])
     ->name('admin.blog')
     ->middleware('auth')
@@ -72,6 +74,32 @@ Route::post('/admin/blog', [AdminBlogController::class, 'save'])
 
 Route::get('/admin/blog/add-new', [AdminBlogController::class, 'showAddNew'])
     ->name('admin.blog.create')
+    ->middleware('auth')
+    ->middleware('admin');
+
+// admin categories
+Route::get('/admin/categories', [AdminCategoryController::class, 'show'])
+    ->name('admin.categories')
+    ->middleware('auth')
+    ->middleware('admin');
+
+Route::get('/admin/categories/add-new', [AdminCategoryController::class, 'showCreate'])
+    ->name('admin.categories.add-new')
+    ->middleware('auth')
+    ->middleware('admin');
+
+Route::post('/admin/categories', [AdminCategoryController::class, 'create'])
+    ->name('admin.categories.create')
+    ->middleware('auth')
+    ->middleware('admin');
+
+Route::get('/admin/categories/edit/{id}', [AdminCategoryController::class, 'showEdit'])
+    ->name('admin.categories.edit')
+    ->middleware('auth')
+    ->middleware('admin');
+
+Route::put('/admin/categories/edit/{id}', [AdminCategoryController::class, 'update'])
+    ->name('admin.categories.update')
     ->middleware('auth')
     ->middleware('admin');
 

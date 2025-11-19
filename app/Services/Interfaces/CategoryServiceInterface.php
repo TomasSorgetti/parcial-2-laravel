@@ -2,9 +2,16 @@
 
 namespace App\Services\Interfaces;
 
-use Illuminate\Support\Collection;
+use App\Models\Category;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 interface CategoryServiceInterface
 {
-    public function getAll(): Collection;
+    public function getAll(int $perPage = 10): LengthAwarePaginator;
+
+    public function getById(string $id): ?Category;
+
+    public function create(array $data): ?Category;
+
+    public function update(int $id, array $data): ?Category;
 }

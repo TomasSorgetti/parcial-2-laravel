@@ -11,7 +11,7 @@ class BlogController extends Controller
 {
     public function show(ArticleServiceInterface $articleService)
     {
-        $articles = $articleService->getAll(2);
+        $articles = $articleService->getAll(5);
         return view('admin.blog.list', compact('articles'));
     }
 

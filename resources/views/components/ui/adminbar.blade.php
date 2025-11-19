@@ -8,6 +8,15 @@
                 <x-ui.nav-link to="admin.blog">Blog</x-ui.nav-link>
             </li>
             <li>
+                <x-ui.nav-link to="admin.categories">Categories</x-ui.nav-link>
+            </li>
+            <li>
+                <x-ui.nav-link to="admin.categories">Levels</x-ui.nav-link>
+            </li>
+            <li>
+                <x-ui.nav-link to="admin.categories">Exercises</x-ui.nav-link>
+            </li>
+            <li>
                 <span class="cursor-not-allowed">Settings</span>
             </li>
 
